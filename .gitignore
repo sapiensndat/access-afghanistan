@@ -11,3 +11,16 @@ layers-old/venv/
 # OS / IDE files
 *.DS_Store
 cache/
+*.tif
+*.zip
+*.xyz
+*.gpkg
+*.aux.xml
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.geojson
+cache/
+layers-old/
