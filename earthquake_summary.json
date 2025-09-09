@@ -1,0 +1,5 @@
+{
+  "high": {"population": 349531, "houses": 53774, "displaced": 104859},
+  "medium": {"population": 1501815, "houses": 231048, "displaced": 450544},
+  "low": {"population": 2579949, "houses": 396915, "displaced": 773985}
+}

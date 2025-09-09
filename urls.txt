@@ -1,0 +1,2 @@
+https://maphub.net/MappingInsurgencies/taliban-checkpoints/download/geojson
+https://data.humdata.org/dataset/afghanistan-border-monitoring-unofficial-crossing-points-2023/resource/geojson

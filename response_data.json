@@ -1,0 +1,69 @@
+{
+  "response_data": [
+    {
+      "actor": "UNICEF",
+      "activity": "Deploying mobile health teams and emergency supplies (tents, hygiene kits)",
+      "timeline": "Sep 1-30, 2025",
+      "status": "Active",
+      "impact": 5,
+      "sector": "Health"
+    },
+    {
+      "actor": "WHO",
+      "activity": "Assisting hospitals with medical supplies and staff deployment",
+      "timeline": "Sep 1-Oct 15, 2025",
+      "status": "Active",
+      "impact": 4,
+      "sector": "Health"
+    },
+    {
+      "actor": "Red Crescent",
+      "activity": "Providing emergency assistance and hygiene promotion",
+      "timeline": "Sep 1-Dec 2025",
+      "status": "Active",
+      "impact": 4,
+      "sector": "WASH"
+    },
+    {
+      "actor": "IOM",
+      "activity": "Distributing 1,000 family tents from India",
+      "timeline": "Sep 2-30, 2025",
+      "status": "Active",
+      "impact": 4,
+      "sector": "Shelter"
+    },
+    {
+      "actor": "Save the Children",
+      "activity": "Medical teams and emergency food aid",
+      "timeline": "Sep 1-Oct 31, 2025",
+      "status": "Active",
+      "impact": 3,
+      "sector": "Nutrition"
+    },
+    {
+      "actor": "MSF",
+      "activity": "Supporting hospitals in Nangarhar and Laghman",
+      "timeline": "Sep 1-Dec 2025",
+      "status": "Active",
+      "impact": 5,
+      "sector": "Health"
+    },
+    {
+      "actor": "Taliban Govt",
+      "activity": "Helicopter evacuations and aid coordination",
+      "timeline": "Sep 1-15, 2025",
+      "status": "Active",
+      "impact": 4,
+      "sector": "Shelter"
+    },
+    {
+      "actor": "UN OCHA",
+      "activity": "Released $5M emergency funds",
+      "timeline": "Sep 1-30, 2025",
+      "status": "Active",
+      "impact": 3,
+      "sector": "Protection"
+    }
+  ],
+  "notes": "Based on Reuters, NYT, BBC, and Al Jazeera reports for Sep 1-2, 2025 earthquake. Actors and activities reflect reported responses. Timelines estimated for immediate response (1-3 months). Impact on 1-5 scale based on scale and urgency."
+}

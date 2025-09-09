@@ -1,0 +1,49 @@
+### Columns for Dashboard Data in Excel
+
+#### 1. Key Identifiers
+- **Geo**: Geography/region of the affected area (e.g., RegionA, RegionB, RegionC, corresponding to Kunar, Nangarhar, Laghman). Text.
+- **Pop**: Population group (e.g., IDP, HostCommunity, Refugee). Text.
+- **Sector**: Sector of need (e.g., Nutrition, Protection, WASH, Shelter, Health). Text.
+
+#### 2. Metrics Overview
+- **TotalPop**: Total population in the specified geo/pop/sector combination (e.g., 30,000 for RegionA_IDP_Shelter). Integer.
+- **TotalNeed**: Total population in need of assistance for the sector (e.g., 27,000 for Shelter in Kunar). Integer.
+- **Pwd**: Number of persons with disabilities in the population (e.g., 4,500). Integer.
+- **Fhh**: Number of female-headed households in need (e.g., 6,750). Integer.
+
+#### 3. Map Data
+- **Map_Center_Lat**: Latitude of the map center for the region (e.g., 35.0 for Kunar). Float.
+- **Map_Center_Lng**: Longitude of the map center for the region (e.g., 71.0 for Kunar). Float.
+- **Map_Zoom**: Zoom level for the map view (e.g., 9). Integer.
+- **Marker_Lat**: Latitude of a specific marker (e.g., 35.0 for a village in Kunar). Float. (Note: Multiple markers per region may require separate rows or a nested structure.)
+- **Marker_Lng**: Longitude of a specific marker (e.g., 71.0). Float.
+- **Marker_Radius**: Radius of the marker circle, proportional to affected population (e.g., 20,000). Integer.
+- **Marker_Severity**: Severity level of need at the marker location (e.g., High, Moderate, Low). Text.
+- **Marker_Popup**: Popup text for the marker (e.g., "Kunar: 27,000 affected"). Text.
+
+#### 4. Gap Analysis
+- **Gap_Target**: Target number of people to be reached for the sector (e.g., 27,000 for Shelter). Integer.
+- **Gap_Reached**: Number of people actually reached with aid (e.g., 16,200). Integer.
+- **Gap_Title**: Title for the gap analysis (e.g., "Shelter Support for IDPs in RegionA"). Text.
+
+#### 5. Population Pyramid
+- **Age_Group**: Age group for population pyramid (e.g., 0-9, 10-19, ..., 80+). Text.
+- **Male_Pop**: Number of males in the age group (e.g., 6,000 for 0-9). Integer.
+- **Female_Pop**: Number of females in the age group (e.g., 5,800 for 0-9). Integer.
+- **Male_Dis**: Number of males with disabilities in the age group (e.g., 250 for 0-9). Integer.
+- **Female_Dis**: Number of females with disabilities in the age group (e.g., 240 for 0-9). Integer.
+
+#### 6. Satisfaction Pyramid
+- **Male_Sat**: Satisfaction score for males in the age group (e.g., 95% for 0-9). Integer (0-100).
+- **Female_Sat**: Satisfaction score for females in the age group (e.g., 96% for 0-9). Integer (0-100).
+
+#### 7. Response Tracking (Who, What, Where, When)
+- **Org**: Name of the organization providing aid (e.g., WFP, UNICEF, MSF). Text.
+- **Activity**: Description of the response activity (e.g., "Food Distribution", "Medical Aid & Trauma Care"). Text.
+- **Timeline**: Duration of the activity (e.g., "Sep-Dec 2025"). Text.
+- **Status**: Status of the activity (e.g., Active, Planned). Text.
+- **Impact**: Impact score of the activity (e.g., 0-5, where 5 is highest). Integer.
+
+#### 8. Partner Coverage
+- **Partner**: Name of the partner organization (e.g., WFP, UNICEF). Text.
+- **Coverage**: Percentage of needs covered by the partner for the sector (e.g., 75%). Integer (0-100).

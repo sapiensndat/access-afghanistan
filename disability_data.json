@@ -1,0 +1,8 @@
+{
+  "disability_data": {
+    "prevalence_overall": 0.13,
+    "male_percentage_of_disabled": 45.4,
+    "female_percentage_of_disabled": 54.6,
+    "notes": "Prevalence of 13% based on HNRP 2025 for humanitarian contexts. Gender split (45.4% male, 54.6% female) from UN Women Gender Index 2024. Applied to ~890,000 affected by September 1, 2025 earthquake."
+  }
+}

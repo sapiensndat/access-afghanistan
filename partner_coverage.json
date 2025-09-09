@@ -1,0 +1,36 @@
+{
+  "map_data": {
+    "Kunar_IDP_Nutrition": {
+      "center": [34.67, 70.75],
+      "zoom": 10,
+      "markers": [
+        { "lat": 34.68, "lng": 70.76, "radius": 12000, "severity": "High", "popup": "Mazar Dara: 10,000 in need of nutrition support" },
+        { "lat": 34.65, "lng": 70.73, "radius": 8000, "severity": "Moderate", "popup": "Nurgal Village: 7,000 in need of nutrition support" }
+      ]
+    },
+    "Nangarhar_HostCommunity_Protection": {
+      "center": [34.43, 70.46],
+      "zoom": 10,
+      "markers": [
+        { "lat": 34.44, "lng": 70.47, "radius": 10000, "severity": "High", "popup": "Jalalabad: 8,000 at risk for protection needs" },
+        { "lat": 34.41, "lng": 70.45, "radius": 6000, "severity": "Moderate", "popup": "Dara Noor: 5,000 at risk for protection needs" }
+      ]
+    },
+    "Other_Refugee_Shelter": {
+      "center": [34.55, 70.60],
+      "zoom": 9,
+      "markers": [
+        { "lat": 34.56, "lng": 70.61, "radius": 5000, "severity": "High", "popup": "Returnee Camp: 4,000 need shelter support" }
+      ]
+    },
+    "Kunar_IDP_Health": {
+      "center": [34.67, 70.75],
+      "zoom": 10,
+      "markers": [
+        { "lat": 34.69, "lng": 70.77, "radius": 15000, "severity": "High", "popup": "Kunar North: 12,000 need health services" },
+        { "lat": 34.66, "lng": 70.74, "radius": 10000, "severity": "Moderate", "popup": "Kunar South: 8,000 need health services" }
+      ]
+    }
+  },
+  "notes": "Epicenter at 34.67°N, 70.75°E (USGS, 17 miles east of Jalalabad). Markers for Mazar Dara, Nurgal, Jalalabad, Dara Noor from Reuters/Al Jazeera reports. Radii scaled as sqrt(pop)*100. Severity based on intensity zones (MMI IX in Nurgal)."
+}

@@ -1,0 +1,13 @@
+# GeoJSON and cache
+*.geojson
+cache/
+layers-old/cache/
+layers-old/DATA/
+
+# Virtual environment
+venv/
+layers-old/venv/
+
+# OS / IDE files
+*.DS_Store
+cache/

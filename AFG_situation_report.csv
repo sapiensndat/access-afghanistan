@@ -1,0 +1,401 @@
+shapeName,risk_level,mean_mask_pct,n_events
+Deh Bala,Low,0,1.0
+Gulran,Low,0,1.0
+Koshk,Low,0,1.0
+Chaparhar,Low,0,1.0
+Koshki Kohna,Low,0,1.0
+Pachier Agam,Low,0,1.0
+Kohsan,None,0,0.0
+Khogayani,Low,0,1.0
+Shirzad,Low,0,1.0
+Ghoryan,None,0,0.0
+Hesarak,Low,0,1.0
+"Zanda  Jan
+",None,0,0.0
+Azra,None,0,0.0
+Guzara,None,0,0.0
+Karukh,Low,0,1.0
+Ali Khail (Jaji),None,0,0.0
+Dand Patan,None,0,0.0
+Pashtun Zarghun,Low,0,1.0
+Chamkani,None,0,0.0
+Laja Ahmad Khail,None,0,0.0
+Sayed Karam,None,0,0.0
+Ahmad Abad,None,0,0.0
+Obe,Low,0,1.0
+Jani Khail,None,0,0.0
+Farsi,Low,0,1.0
+Gardiz,None,0,1.0
+Zurmat,None,0,0.0
+Anar Dara,None,0,0.0
+Shawak,None,0,0.0
+Qala Ka,None,0,0.0
+Khaki Safed,Low,0,1.0
+Shindand,Low,0,1.0
+Zadran,None,0,0.0
+Jaji Maidan,None,0,0.0
+Bak,None,0,0.0
+Shib Koh,None,0,0.0
+Sabri,None,0,1.0
+Lash Wa Juwayn,None,0,0.0
+Tere Zayi,None,0,0.0
+Pusht Rod,Low,0,1.0
+Mosa Khail,None,0,0.0
+Farah,Low,0,1.0
+Qalandar,None,0,0.0
+Bala Buluk,Low,0,1.0
+Nadir Shah Kot,None,0,0.0
+Gulistan,Low,0,1.0
+Khost(Matun),None,0,1.0
+Gurbuz,None,0,0.0
+Pur Chaman,Low,0,1.0
+Mando Zayi,None,0,0.0
+Tani,None,0,0.0
+Chahar Dara,Low,0,1.0
+Bakwa,Low,0,1.0
+Shamal,None,0,0.0
+Kunduz,Low,0,1.0
+Spira,None,0,1.0
+Guzargahi Nur,None,0,0.0
+Mohammad Agha,None,0,0.0
+Khoshi,None,0,0.0
+Farang Wa Gharu,None,0,0.0
+Puli Alam,None,0,0.0
+Khost Wa Firing,Low,0,1.0
+Baraki Barak,None,0,0.0
+Puli Hisar,Low,0,1.0
+Charkh,None,0,0.0
+Kharwar,None,0,0.0
+Burka,Low,0,1.0
+Khas Kunar,Medium,0,2.0
+Nurgal,Medium,0,3.0
+Dih Salah,Low,0,1.0
+Chawkay,Low,0,1.0
+Khwaja Hijran (Jilga Nahrin),Low,0,1.0
+Narang,Medium,0,2.0
+Kang,None,0,0.0
+Baghlani Jadid,Low,0,1.0
+Chapa Dara,Medium,0,2.0
+Zaranj,None,0,0.0
+Asadabad,Medium,0,2.0
+Puli Khumri,Low,0,1.0
+Sarkani,Medium,0,3.0
+Chahar Burjak,None,0,0.0
+Nahrin,Low,0,1.0
+Marawara,Medium,0,2.0
+Chakhansur,Low,0,1.0
+Andarab,Low,0,1.0
+Khinjan,Low,0,1.0
+Shaygal wa shital,Medium,0,2.0
+Khash Rod,Low,0,1.0
+Dushi,Low,0,1.0
+Dara-I-Pech,Medium,0,3.0
+Dishu,None,0,0.0
+Dahana-I- Ghuri,Low,0,1.0
+Wata Pur,Medium,0,2.0
+Reg(Khanshin),None,0,0.0
+Tala Wa Barfak,None,0,0.0
+Dangam,Medium,0,3.0
+Garmser,None,0,0.0
+Bar Kunar,Medium,0,2.0
+Paryan,Low,0,1.0
+Nawa-I- Barak Zayi,None,0,0.0
+Ghaziabad,Medium,0,2.0
+Khenj (Hese- Awal),Low,0,1.0
+Nad Ali,None,0,0.0
+Nari,Medium,0,2.0
+Ziruk,None,0,0.0
+Nahri Sarraj,Low,0,1.0
+Bazarak,Low,0,1.0
+Lashkar Gah,None,0,0.0
+Nika,None,0,0.0
+Dara,Medium,0,2.0
+Sangin,Low,0,1.0
+Gayan,None,0,0.0
+Rukha,Low,0,1.0
+Kajaki,Low,0,1.0
+Urgun,None,0,0.0
+Unaba,Low,0,1.0
+Naw Zad,Low,0,1.0
+Sar Hawza,None,0,0.0
+Shutul,Low,0,1.0
+Musa Qala,Low,0,1.0
+Mata Khan,None,0,0.0
+Alasay,Medium,0,2.0
+Sharan,None,0,0.0
+Baghran,Low,0,1.0
+Tagab,Low,0,1.0
+Barmal,None,0,0.0
+Registan,Medium,0,2.0
+Sarobi,None,0,0.0
+Mahmudi Raqi,Low,0,1.0
+Shorabak,None,0,0.0
+Omna,None,0,0.0
+Yosuf Khel,None,0,0.0
+Hisa-i-Duwumi Kohistan,Low,0,1.0
+Spin Boldak,None,0,0.0
+Yahya Khel,None,0,0.0
+Hisa-i-Awali Kohistan,Low,0,1.0
+Arghistan,None,0,0.0
+Zarghun Shahr,None,0,0.0
+Panjwayi,None,0,0.0
+Salang,Low,0,1.0
+Kandahar,None,0,0.0
+Jabalussaraj,Low,0,1.0
+Jani Khel,None,0,0.0
+Daman,None,0,0.0
+Kohi Safi,None,0,0.0
+Dila,None,0,0.0
+Shah Wali Kot,None,0,0.0
+Waza Khwa,None,0,0.0
+Bagram,Low,0,1.0
+Sayd Khel,Low,0,1.0
+Arghandab,None,0,0.0
+Gomal,None,0,0.0
+Maywand,None,0,0.0
+Chaharikar,Low,0,1.0
+Ghorak,Low,0,1.0
+Turwo,None,0,0.0
+Shinwari,Low,0,1.0
+Zhari,None,0,0.0
+Wor Mayi,None,0,0.0
+Sia Gird ( Ghorbund),None,0,0.0
+Khakrez,None,0,0.0
+Nawa,None,0,0.0
+Surkhi Parsa,None,0,0.0
+Ab Kamari,Low,0,1.0
+Shekh  Ali,None,0,0.0
+Gelan,None,0,0.0
+Muqur,Low,0,1.0
+Kaldar,Low,0,1.0
+Muqur,None,0,1.0
+Dawlatabad,Low,0,1.0
+Qala-I- Naw,Low,0,1.0
+Dihrawud,None,0,0.0
+Ab Band,None,0,0.0
+Nahri Shahi,Low,0,1.0
+Giro,None,0,0.0
+Shahidi Hassas,Low,0,1.0
+Mazari Sharif,Low,0,1.0
+Andar,None,0,0.0
+Nesh,None,0,0.0
+Koh Band,Low,0,1.0
+Dih Yak,None,0,0.0
+Qadis,Low,0,1.0
+Nijrab,Medium,0,2.0
+Zana Khan,None,0,0.0
+Marmul,Low,0,1.0
+Tulak,Low,0,1.0
+Chahar Kint,Low,0,1.0
+Ghazni,None,0,0.0
+Saghar,Low,0,1.0
+Sholgara,Low,0,1.0
+Khwaja Umari,None,0,0.0
+Dihdadi,Low,0,1.0
+Rashidan,None,0,0.0
+Tirin Kot,None,0,0.0
+Balkh,Low,0,1.0
+Fayzabad,None,0,1.0
+Wali Muhammadi Shahid,None,0,0.0
+Chahar Bolak,Low,0,1.0
+Mangajek,Low,0,1.0
+Waghaz,None,0,0.0
+Khwaja Du Koh,Low,0,1.0
+Chimtal,None,0,0.0
+Bahrami Shahid (Jaghatu),None,0,0.0
+Shibirghan,None,0,0.0
+Kishindih,Low,0,1.0
+Qarabagh,None,0,0.0
+Zari,None,0,0.0
+Qush Tepa,None,0,0.0
+Kamdesh,Medium,0,2.0
+Darzab,None,0,0.0
+Hazrati Sultan,Low,0,1.0
+Waygal,Medium,0,2.0
+Khaniqa,None,0,0.0
+Aybak,Low,0,1.0
+Wama,Medium,0,2.0
+Sari Pul,None,0,0.0
+Ruyi Du Ab,None,0,0.0
+Sayyad,None,0,0.0
+Nurgaram,Medium,0,2.0
+Khuram Wa Sarbagh,Low,0,1.0
+Kohistanat,Low,0,1.0
+Alingar,Medium,0,2.0
+Feroz Nakhchir,Low,0,1.0
+Qarghayi,Low,0,1.0
+Khani Chahar Bagh,Low,0,1.0
+Dara-I-Sufi Payin,Low,0,1.0
+Mihtarlam,Low,0,1.0
+Andkhoy,None,0,0.0
+Dara-I-Sufi Bala,Low,0,1.0
+Qurghan,Low,0,1.0
+Mardyan,Low,0,1.0
+Qaramqol,None,0,0.0
+Wakhan,Low,0,1.0
+Aqcha,None,0,0.0
+Dawlatabad,None,0,1.0
+Balkhab,None,0,0.0
+Shirin Tagab,None,0,0.0
+Ishkashiem,Low,0,1.0
+Gosfandi,None,0,0.0
+Khwaja Sabz Posh,None,0,0.0
+Sangcharak,None,0,0.0
+Maymana,None,0,0.0
+Shighnan,Low,0,1.0
+Sozma Qala,None,0,0.0
+Bilchiragh,None,0,0.0
+Kahmard,None,0,0.0
+Darwazbala,Low,0,1.0
+Bamyan,None,0,0.0
+Pashtun Kot,None,0,0.0
+Almar,Low,0,1.0
+Sayghan,None,0,0.0
+Darwaz,Low,0,1.0
+Qaysar,Low,0,1.0
+Shibar,None,0,0.0
+Shaki,Low,0,1.0
+Gurziwan,None,0,0.0
+Yakawlang,Low,0,1.0
+Kuf Ab,Low,0,1.0
+Kohistan,None,0,1.0
+Panjab,Low,0,1.0
+Gizab,Low,0,1.0
+Khwahan,Low,0,1.0
+Nili,Low,0,1.0
+Waras,Low,0,1.0
+Raghistan,Low,0,1.0
+Ishtarlay,Low,0,1.0
+Miramor,Low,0,1.0
+Sangi Takht,Low,0,1.0
+Shahristan,None,0,0.0
+Argo,Low,0,1.0
+Lal Wa Sarjangal,Low,0,1.0
+Qarabagh,None,0,0.0
+Yaftal Sufla,Low,0,1.0
+Istalif,None,0,0.0
+Dawlat Yar,Low,0,1.0
+Kohistan,Low,0,1.0
+Farza,None,0,0.0
+Fayzabad,Low,0,1.0
+Chaghcharan,Low,0,1.0
+Guldara,None,0,0.0
+Arghanj Khaw,Low,0,1.0
+Kalakan,None,0,0.0
+Charsada,Low,0,1.0
+Shahada,Low,0,1.0
+Mir Bacha Kot,None,0,0.0
+Du Layna,Low,0,1.0
+Baharak,Low,0,1.0
+Shakardara,None,0,0.0
+Ghormach,Low,0,1.0
+"Warduj
+",Low,0,1.0
+Paghman,None,0,0.0
+Bala Murghab,Low,0,2.0
+Dih Sabz,None,0,0.0
+Khash,Low,0,1.0
+Kabul,None,0,3.0
+Jawand,Low,0,1.0
+Zebak,Medium,0,2.0
+Bagrami,None,0,0.0
+Chishti Sharif,Low,0,1.0
+Jurm,Medium,0,2.0
+Maydan Shahr,None,0,0.0
+Darayim,Low,0,1.0
+Shahrak,Low,0,1.0
+Jalrez,None,0,0.0
+Tashkan,Low,0,1.0
+Taywara,Low,0,1.0
+Hisa-I- Awali Bihsud,None,0,0.0
+Washer,Low,0,1.0
+Kishim,Low,0,1.0
+Markazi Bihsud,None,0,0.0
+Pasaband,Low,0,1.0
+Day Mirdad,None,0,0.0
+Tagab (Kishmi Bala),Medium,0,2.0
+Khadir,Low,0,1.0
+Bargi Matal,Medium,0,2.0
+Gaiti,Low,0,1.0
+Kuran Wa Munjan,Medium,0,3.0
+Du Ab,Medium,0,2.0
+Kajran,Low,0,1.0
+Yamgan (Girwan),Medium,0,2.0
+Parun,Medium,0,2.0
+Chora,Low,0,1.0
+Rustaq,Low,0,1.0
+Mandol,Medium,0,2.0
+Hirat,None,0,1.0
+Kalfagan,Low,0,1.0
+Daulatshahi,Medium,0,2.0
+Injil,None,0,0.0
+Taluqan,None,0,0.0
+Alishing,Medium,0,2.0
+Hazar Sumuch,Low,0,1.0
+Surobi,Low,0,1.0
+Baharak,None,0,1.0
+Khaki Jabbar,None,0,0.0
+Musayi,None,0,0.0
+Farkhar,Low,0,1.0
+Chahar Asyab,None,0,0.0
+Warsaj,Low,0,1.0
+Namak Ab,None,0,0.0
+Nirkh,None,0,0.0
+Chal,None,0,0.0
+Chaki Wardak,None,0,0.0
+Bangi,None,0,0.0
+Adraskan,Low,0,1.0
+Saydabad,None,0,0.0
+Ishkamish,None,0,0.0
+Miya Nishin,None,0,0.0
+Khwaja Bahawuddin,Low,0,1.0
+Mizan,None,0,0.0
+Khanabad,Low,0,1.0
+Jaghatu,None,0,0.0
+Tarnak Wa Jaldak,None,0,0.0
+Aliabad,Low,0,1.0
+Nawur,None,0,0.0
+Atghar,None,0,0.0
+Qalat,None,0,0.0
+Jaghuri,None,0,0.0
+Daychopan,None,0,0.0
+Malistan,None,0,0.0
+Goshta,Medium,0,3.0
+Ajristan,None,0,0.0
+Lal Por,Medium,0,3.0
+Khas Uruzgan,None,0,0.0
+Muhmand Dara,Medium,0,3.0
+Kakar,None,0,0.0
+Bati Kot,Low,0,1.0
+Arghandab,None,0,0.0
+Shahjoy,None,0,0.0
+Kama,Low,0,1.0
+Kuz Kunar,Low,0,1.0
+Shinkay,None,0,0.0
+Naw Bahar,None,0,0.0
+Dara-I-Nur,Low,0,1.0
+Bihsud,Low,0,1.0
+Shamulzayi,None,0,0.0
+Jalalabad,Low,0,1.0
+Yawan,Low,0,1.0
+Surkh Rod,Low,0,1.0
+Shahri Buzurg,Low,0,1.0
+Chah Ab,Low,0,1.0
+Dur Baba,Medium,0,3.0
+Shinwar,Low,0,2.0
+Yangi Qala,Low,0,1.0
+Nazyan,Low,0,1.0
+Darqad,Low,0,1.0
+Acheen,Low,0,1.0
+Dashti Qala,Low,0,1.0
+Khwaja Ghar,Low,0,1.0
+Kot,Low,0,1.0
+Dashte Archi,Low,0,1.0
+Rodat,Low,0,1.0
+Imam Sahib,Low,0,1.0
+Qalay-I- Zal,Low,0,1.0
+Khulm,Low,0,1.0
+Shortepa,Low,0,1.0
+Qarqin,Low,0,1.0
+Kham Ab,Low,0,1.0
+Maruf,None,0,0.0

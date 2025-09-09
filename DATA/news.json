@@ -1,0 +1,232 @@
+[
+  {
+    "organization": "MSF",
+    "type": "INGO",
+    "people_reached": 5000,
+    "main_activity": "Medical",
+    "time": "2025-09-04 04:17:12",
+    "status": "Active",
+    "impact_level": 4,
+    "url": "https://time.com/7313842/afghanistan-earthquake-relief-organizations-how-to-help/"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:13",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://www.bbc.com/news/articles/cwye0lpj9z6o"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:13",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://www.ifrc.org/press-release/ifrc-launches-emergency-appeal-support-afghanistan-earthquake-recovery"
+  },
+  {
+    "organization": "MSF",
+    "type": "INGO",
+    "people_reached": 5000,
+    "main_activity": "Medical",
+    "time": "2025-09-04 04:17:14",
+    "status": "Active",
+    "impact_level": 4,
+    "url": "https://www.doctorswithoutborders.org/latest/how-msf-responding-earthquake-afghanistan"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:14",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://www.amnesty.org/en/latest/news/2025/09/afghanistan-earthquake/"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:14",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://www.theguardian.com/world/2025/sep/02/afghanistan-earthquake-taliban-appeals-for-international-aid-as-rescue-teams-search-for-survivors"
+  },
+  {
+    "organization": "UNICEF",
+    "type": "UN Agency",
+    "people_reached": 10000,
+    "main_activity": "Relief",
+    "time": "2025-09-04 04:17:14",
+    "status": "Active",
+    "impact_level": 4,
+    "url": "https://news.un.org/en/story/2025/09/1165766"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:14",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://www.aljazeera.com/news/2025/9/3/hope-fades-for-finding-survivors-after-afghan-quake-kills-more-than-1400"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:15",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://abcnews.go.com/International/afghanistan-earthquake-death-toll-rises/story?id=125172025"
+  },
+  {
+    "organization": "UNICEF",
+    "type": "UN Agency",
+    "people_reached": 10000,
+    "main_activity": "Relief",
+    "time": "2025-09-04 04:17:15",
+    "status": "Active",
+    "impact_level": 4,
+    "url": "https://reliefweb.int/report/afghanistan/afghanistan-flash-update-2-earthquake-nangarhar-province-2-september-2025-1600"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:16",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000qsvj"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:16",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://www.rescue.org/article/afghanistan-earthquake-whats-happening-and-how-help"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:16",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://en.wikipedia.org/wiki/2025_Afghanistan_earthquake"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:16",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://www.unrefugees.org/news/unhcr-calls-for-urgent-aid-to-afghanistan-s-earthquake-hit-communities/"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:21",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://www.cnn.com/2025/09/02/asia/afghanistan-earthquake-taliban-us-intl-hnk"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:21",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://www.reuters.com/world/asia-pacific/afghanistan-earthquake-kills-800-injures-2800-taliban-asks-world-help-2025-09-01/"
+  },
+  {
+    "organization": "MSF",
+    "type": "INGO",
+    "people_reached": 5000,
+    "main_activity": "Medical",
+    "time": "2025-09-04 04:17:22",
+    "status": "Active",
+    "impact_level": 4,
+    "url": "https://abcnews.go.com/International/impacted-afghanistan-earthquake-charities-organizations-support-relief-efforts/story?id=125191723"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:23",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://www.bbc.com/news/live/cy8kkxxxj3xt"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:24",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://www.abc.net.au/news/2025-09-04/afghanistan-earthquake-challenges-taliban-health-aid-workers/105732408"
+  },
+  {
+    "organization": "UNHCR",
+    "type": "UN Agency",
+    "people_reached": 8000,
+    "main_activity": "Shelter",
+    "time": "2025-09-04 04:17:24",
+    "status": "Active",
+    "impact_level": 4,
+    "url": "https://reliefweb.int/disaster/eq-2025-000153-afg"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:24",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://www.emro.who.int/afg/afghanistan-news/who-steps-up-response-to-meet-rising-health-needs-after-earthquake-in-eastern-afghanistan.html"
+  },
+  {
+    "organization": "ICRC",
+    "type": "INGO",
+    "people_reached": 7000,
+    "main_activity": "Medical",
+    "time": "2025-09-04 04:17:24",
+    "status": "Active",
+    "impact_level": 4,
+    "url": "https://www.icrc.org/en/article/icrc-response-deadly-earthquake-afghanistan"
+  },
+  {
+    "organization": "Unknown",
+    "type": "INGO",
+    "people_reached": 0,
+    "main_activity": "Unknown",
+    "time": "2025-09-04 04:17:25",
+    "status": "Active",
+    "impact_level": 3,
+    "url": "https://www.directrelief.org/2025/09/after-a-catastrophic-earthquake-in-afghanistan-direct-relief-commits-50000-prepares-emergency-medical-shipment/"
+  }
+]

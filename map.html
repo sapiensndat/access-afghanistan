@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanitarian Risk & Access Dashboard: Afghanistan</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js"></script>
+
+    <style>
+        /* --- Base Layout & Typography --- */
+        :root {
+            --ocha-un-blue: #009edb;
+            --ocha-dark-blue: #004987;
+            --ocha-black: #000000;
+            --ocha-white: #ffffff;
+            --ocha-neutral-grey: #f2f2f2;
+            --ocha-medium-grey: #999999;
+            --ocha-light-grey: #e6e6e6;
+            --accent-red: #ed1847;
+            --accent-orange: #f58220;
+            --accent-green: #72bf44;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto Condensed', sans-serif;
+            background-color: var(--ocha-neutral-grey);
+            color: var(--ocha-black);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .dashboard-header {
+            background: linear-gradient(135deg, var(--ocha-un-blue), var(--ocha-dark-blue));
+            padding: 15px 20px;
+            border-bottom: 2px solid var(--ocha-dark-blue);
+            text-align: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .dashboard-header img {
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-header h1 { margin: 0; font-size: 1.8em; color: var(--ocha-white); font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        .dashboard-header p { margin: 5px 0 0; font-size: 0.9em; color: #c5dfef; }
+
+        .dashboard-container { display: flex; flex-grow: 1; position: relative; }
+
+        /* --- Sidebar --- */
+        .sidebar {
+            width: 350px;
+            background-color: var(--ocha-white);
+            padding: 20px;
+            overflow-y: auto;
+            border-right: 2px solid var(--ocha-medium-grey);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-section { margin-bottom: 25px; border-bottom: 1px solid var(--ocha-medium-grey); padding-bottom: 20px; }
+        .sidebar-section:last-child { border-bottom: none; }
+        .sidebar h2 { font-size: 1.2em; color: var(--ocha-un-blue); margin-top: 0; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+        .metric-title { font-size: 0.95em; color: #666666; margin-bottom: 5px; }
+        .metric-value { 
+            font-size: 2.2em; 
+            font-weight: 700; 
+            color: var(--ocha-dark-blue); 
+            line-height: 1; 
+            text-shadow: 0 0 5px rgba(0, 158, 219, 0.4);
+        }
+
+        .status-breakdown { list-style: none; padding: 0; margin: 0; }
+        .status-breakdown li { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 1.1em; }
+        .status-breakdown .status-High::before { content: '●'; margin-right: 10px; color: var(--ocha-dark-blue); }
+        .status-breakdown .status-Medium::before { content: '●'; margin-right: 10px; color: #4da8da; }
+        .status-breakdown .status-Low::before { content: '●'; margin-right: 10px; color: #b3e0ff; }
+
+        /* --- Search Bar --- */
+        .search-bar { margin-bottom: 20px; }
+        .search-bar input { width: 100%; padding: 10px; border: 2px solid var(--ocha-medium-grey); border-radius: 5px; font-size: 1em; font-family: 'Roboto Condensed', sans-serif; }
+        .search-bar input:focus { border-color: var(--ocha-un-blue); outline: none; box-shadow: 0 0 5px rgba(0, 158, 219, 0.5); }
+
+        /* --- Map & Futuristic UI --- */
+        #map { flex-grow: 1; background-color: var(--ocha-light-grey); }
+        .district-hover {
+            fill-opacity: 0.8 !important;
+            stroke: var(--ocha-un-blue) !important;
+            stroke-width: 2.5px !important;
+        }
+        
+        /* Glassmorphism Effect for Popups, Legend, Controls */
+        .leaflet-popup-content-wrapper, .leaflet-control-layers, .legend {
+            background-color: rgba(255, 255, 255, 0.8) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--ocha-black);
+            font-family: 'Roboto Condensed', sans-serif;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        .leaflet-popup-tip { background-color: rgba(255, 255, 255, 0.8) !important; }
+        .leaflet-control-layers-base label, .leaflet-control-layers-overlays label { color: var(--ocha-black); font-weight: bold; }
+        
+        .legend { padding: 12px; line-height: 1.5; }
+        .legend h4 { margin: 0 0 8px; font-size: 1.1em; font-weight: 700; border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding-bottom: 5px; }
+        .legend i { width: 18px; height: 18px; float: left; margin-right: 10px; opacity: 0.9; border-radius: 2px; }
+
+        /* --- Shining/Glowing Hazard Marker --- */
+        .shining-marker {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--marker-color);
+            border: 2px solid white;
+            box-shadow: 0 0 8px var(--marker-color), 0 0 12px var(--marker-color), 0 0 16px var(--marker-color);
+            animation: constant-shine 1.5s infinite alternate ease-in-out;
+        }
+
+        @keyframes constant-shine {
+            from {
+                box-shadow: 0 0 6px var(--marker-color), 0 0 8px var(--marker-color), 0 0 10px var(--marker-color);
+            }
+            to {
+                box-shadow: 0 0 10px var(--marker-color), 0 0 16px var(--marker-color), 0 0 22px var(--marker-color);
+            }
+        }
+
+        /* --- Loading Overlay --- */
+        #loader-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            transition: opacity 0.5s;
+        }
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 8px solid var(--ocha-dark-blue);
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* --- Footer Disclaimer --- */
+        .footer-disclaimer {
+            background-color: var(--ocha-neutral-grey);
+            padding: 12px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666666;
+            flex-shrink: 0;
+            border-top: 1px solid var(--ocha-medium-grey);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <img src="wdclogobg-DaW87GU_.png" alt="OCHA Logo">
+        <h1>Humanitarian Risk & Access Dashboard: Afghanistan</h1>
+        <p>Displaying composite risk, access levels, and real-time hazard events. Last updated: <span id="current-date"></span></p>
+    </header>
+
+    <div class="dashboard-container">
+        <div id="loader-overlay"><div class="loader"></div></div>
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2>Search Location</h2>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search for a district...">
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h2>District Risk Overview</h2>
+                <p class="metric-title">Total Admin2 Districts Analyzed</p>
+                <p id="total-districts" class="metric-value">0</p>
+                <br>
+                <p class="metric-title">Risk Level Breakdown</p>
+                <ul class="status-breakdown">
+                    <li class="status-High"><span class="status-label">High Risk</span> <strong id="risk-high">0</strong></li>
+                    <li class="status-Medium"><span class="status-label">Medium Risk</span> <strong id="risk-medium">0</strong></li>
+                    <li class="status-Low"><span class="status-label">Low Risk</span> <strong id="risk-low">0</strong></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h2>Road Access Summary</h2>
+                <canvas id="accessChart"></canvas>
+            </div>
+            <div class="sidebar-section">
+                <h2>Events by Type (Last 7 Days)</h2>
+                <p class="metric-title">Total Significant Events</p>
+                <p id="total-events" class="metric-value">0</p>
+                <canvas id="eventChart"></canvas>
+            </div>
+        </aside>
+        <main id="map"></main>
+    </div>
+
+    <footer class="footer-disclaimer">
+        <p>The boundaries and names shown and the designations used on this map do not imply official endorsement or acceptance by the United Nations.</p>
+    </footer>
+
+<script>
+    // ---------- 0. INITIAL SETUP & HELPERS ----------
+    document.getElementById('current-date').innerText = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    const loader = document.getElementById('loader-overlay');
+
+    // Animated counter for metrics
+    function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    // ---------- 1. MAP INITIALIZATION ----------
+    const map = L.map('map').setView([33.9, 67.7], 6);
+
+    // --- 1a. BEAUTIFUL MAP WITH HILLSHADE ---
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri'
+    }).addTo(map);
+
+    map.createPane('hillshadePane');
+    map.getPane('hillshadePane').style.zIndex = 250;
+    map.getPane('hillshadePane').style.opacity = 0.5;
+
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Hillshade/MapServer/tile/{z}/{y}/{x}', {
+        pane: 'hillshadePane'
+    }).addTo(map);
+
+    map.createPane('adminPane');
+    map.getPane('adminPane').style.zIndex = 400;
+    map.createPane('roadsPane');
+    map.getPane('roadsPane').style.zIndex = 500;
+    map.createPane('eventsPane');
+    map.getPane('eventsPane').style.zIndex = 800;
+
+    // --- 1b. ADD MINIMAP ---
+    const miniMapLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; CARTO'
+    });
+    const miniMap = new L.Control.MiniMap(miniMapLayer, { 
+        toggleDisplay: true, 
+        minimized: true,
+        width: 150,
+        height: 150,
+        zoomLevelOffset: -2
+    }).addTo(map);
+
+    // ---------- 2. STYLING FUNCTIONS ----------
+    const riskColors = { 
+        High: '#004987',
+        Medium: '#4da8da',
+        Low: '#b3e0ff',
+        None: '#999999'
+    };
+    const accessColors = { 
+        blocked: '#ed1847',
+        partial: '#f58220',
+        open: '#72bf44'
+    };
+    const eventColors = {
+        'Conflict Events': '#ff4500',
+        'Natural Disasters': '#005f73'
+    };
+
+    const styleAdmin = (feature) => ({
+        fillColor: riskColors[feature.properties.risk_level] || '#999999',
+        weight: 1, 
+        color: '#000000', 
+        fillOpacity: 0.6, 
+        pane: 'adminPane'
+    });
+    
+    const styleRoads = (feature) => ({
+        color: accessColors[feature.properties.access_level] || '#ffffff',
+        weight: feature.properties.access_level === 'blocked' ? 4 : 2,
+        opacity: 0.8, 
+        lineCap: 'round',
+        pane: 'roadsPane'
+    });
+
+    const createEventMarker = (feature, latlng) => {
+        const eventType = feature.properties.eventType;
+        const color = eventColors[eventType] || '#a05fb4';
+        
+        const icon = L.divIcon({
+            className: 'shining-marker-container',
+            html: `<div class="shining-marker" style="--marker-color: ${color};"></div>`,
+            iconSize: [16, 16],
+            iconAnchor: [8, 8]
+        });
+        
+        return L.marker(latlng, { icon: icon, pane: 'eventsPane' });
+    };
+    
+    // ---------- 3. DATA LOADING & LAYER CREATION ----------
+    const eventSources = {
+        'Conflict Events': ['events/ACLED.geojson'],
+        'Natural Disasters': ['events/GDACS.geojson', 'events/USGS.geojson']
+    };
+    const optionalFiles = {
+        Checkpoints: 'checkpoints.geojson',
+        'Conflict Zones': 'conflict_zones.geojson',
+        'Fault Lines': 'afg_fault_centroids.geojson'
+    };
+
+    async function loadJson(url) {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Failed to load: ${url}`);
+        return response.json();
+    }
+
+    async function initializeDashboard() {
+        try {
+            loader.style.display = 'flex'; // Show loader
+
+            const [adminData, roadData] = await Promise.all([
+                loadJson('geoBoundaries-AFG-ADM2_risk.geojson'),
+                loadJson('access_map_yesterday.geojson')
+            ]);
+            
+            // --- Process Events by new Categories ---
+            let allEventFeatures = [];
+            const eventCounts = { 'Conflict Events': 0, 'Natural Disasters': 0 };
+
+            for (const [eventType, files] of Object.entries(eventSources)) {
+                const promises = files.map(file => loadJson(file).catch(e => ({ features: [] })));
+                const datasets = await Promise.all(promises);
+                
+                datasets.forEach(dataset => {
+                    dataset.features.forEach(feature => {
+                        feature.properties.eventType = eventType; // Tag feature with new category
+                        allEventFeatures.push(feature);
+                    });
+                    eventCounts[eventType] += dataset.features.length;
+                });
+            }
+
+            // --- Create Map Layers ---
+            let hoveredLayer = null;
+            const adminLayer = L.geoJSON(adminData, {
+                style: styleAdmin,
+                onEachFeature: (feature, layer) => {
+                    layer.bindPopup(`<strong>District:</strong> ${feature.properties.shapeName}<br><strong>Risk Level:</strong> ${feature.properties.risk_level}`);
+                    layer.on({
+                        mouseover: (e) => {
+                            hoveredLayer = e.target;
+                            hoveredLayer.setStyle({ weight: 2.5, color: '#009edb', fillOpacity: 0.8 });
+                        },
+                        mouseout: () => {
+                            if (hoveredLayer) {
+                                adminLayer.resetStyle(hoveredLayer);
+                                hoveredLayer = null;
+                            }
+                        }
+                    });
+                }
+            });
+
+            const roadLayer = L.geoJSON(roadData, {
+                style: styleRoads,
+                onEachFeature: (f, l) => l.bindPopup(`<strong>Access:</strong> ${f.properties.access_level}<br><strong>Obstruction:</strong> ${f.properties.obstruction}`)
+            });
+            
+            const eventLayer = L.geoJSON({ type: 'FeatureCollection', features: allEventFeatures }, {
+                pointToLayer: createEventMarker,
+                onEachFeature: (f, l) => {
+                    const props = f.properties;
+                    l.bindPopup(`<strong>${props.eventType}</strong><br>${props.title || 'Details unavailable'}<br>Source: ${props.source_feed}`);
+                }
+            });
+
+            const optionalLayers = {};
+            for (const [name, path] of Object.entries(optionalFiles)) {
+                try {
+                    const data = await loadJson(path);
+                    optionalLayers[name] = L.geoJSON(data);
+                } catch (e) { console.warn(`Optional layer ${name} not found.`); }
+            }
+
+            const overlayMaps = {
+                "Admin Risk": adminLayer.addTo(map),
+                "Road Access": roadLayer.addTo(map),
+                "All Events": eventLayer.addTo(map),
+                ...optionalLayers
+            };
+            L.control.layers(null, overlayMaps, { collapsed: false }).addTo(map);
+
+            updateSidebar(adminData, roadData, allEventFeatures.length, eventCounts);
+            addLegend();
+            setupSearch(adminData);
+            
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 500); // Hide loader after transition
+
+        } catch (error) {
+            console.error("Dashboard Initialization Failed:", error);
+            loader.innerHTML = "Failed to load data. Please check connection.";
+        }
+    }
+
+    // ---------- 4. UPDATE UI ELEMENTS ----------
+    function updateSidebar(adminData, roadData, totalEvents, eventCounts) {
+        // District Risk Metrics
+        const riskCounts = { High: 0, Medium: 0, Low: 0, None: 0 };
+        adminData.features.forEach(f => riskCounts[f.properties.risk_level]++);
+        
+        animateValue(document.getElementById('total-districts'), 0, adminData.features.length, 1500);
+        animateValue(document.getElementById('risk-high'), 0, riskCounts.High, 1500);
+        animateValue(document.getElementById('risk-medium'), 0, riskCounts.Medium, 1500);
+        animateValue(document.getElementById('risk-low'), 0, riskCounts.Low, 1500);
+        animateValue(document.getElementById('total-events'), 0, totalEvents, 1500);
+
+        // Road Access Chart
+        const accessCounts = { open: 0, partial: 0, blocked: 0 };
+        roadData.features.forEach(f => accessCounts[f.properties.access_level]++);
+        new Chart(document.getElementById('accessChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Open', 'Partial', 'Blocked'],
+                datasets: [{
+                    data: [accessCounts.open, accessCounts.partial, accessCounts.blocked],
+                    backgroundColor: [accessColors.open, accessColors.partial, accessColors.blocked],
+                    borderColor: '#ffffff', borderWidth: 2
+                }]
+            },
+            options: { responsive: true, plugins: { legend: { position: 'top', labels: { color: '#000000', font: { family: 'Roboto Condensed' } } } } }
+        });
+
+        // Event Type Ring Chart
+        new Chart(document.getElementById('eventChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: Object.keys(eventCounts),
+                datasets: [{
+                    data: Object.values(eventCounts),
+                    backgroundColor: Object.values(eventColors),
+                    borderColor: '#ffffff', borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                cutout: '70%',
+                plugins: { legend: { position: 'bottom', labels: { color: '#000000', font: { family: 'Roboto Condensed', size: 14 } } } }
+            }
+        });
+    }
+
+    function addLegend() {
+        const legend = L.control({ position: 'bottomright' });
+        legend.onAdd = function (map) {
+            const div = L.DomUtil.create('div', 'info legend');
+            let content = '<h4>Risk & Access</h4>';
+            content += '<b>Admin Risk Level</b><br>';
+            for (const level in riskColors) { if (level !== 'None') content += `<i style="background:${riskColors[level]}"></i> ${level}<br>`; }
+            content += '<br><b>Road Access</b><br>';
+            for (const level in accessColors) { content += `<i style="background:${accessColors[level]}"></i> ${level}<br>`; }
+            content += '<br><b>Event Types</b><br>';
+            for (const source in eventColors) { content += `<i style="background:${eventColors[source]}"></i> ${source}<br>`; }
+            div.innerHTML = content;
+            return div;
+        };
+        legend.addTo(map);
+    }
+
+    function setupSearch(adminData) {
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            if (query === "") return;
+            const matchedFeature = adminData.features.find(f => f.properties.shapeName.toLowerCase().includes(query));
+            if (matchedFeature) {
+                const bounds = L.geoJSON(matchedFeature).getBounds();
+                map.fitBounds(bounds);
+                L.popup()
+                    .setLatLng(bounds.getCenter())
+                    .setContent(`<strong>District:</strong> ${matchedFeature.properties.shapeName}<br><strong>Risk Level:</strong> ${matchedFeature.properties.risk_level}`)
+                    .openOn(map);
+            }
+        });
+    }
+
+    // ---------- 5. RUN ON PAGE LOAD ----------
+    document.addEventListener('DOMContentLoaded', initializeDashboard);
+</script>
+
+</body>
+</html>

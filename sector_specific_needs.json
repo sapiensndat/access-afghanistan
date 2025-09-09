@@ -1,0 +1,40 @@
+{
+  "sector_specific_needs": {
+    "Nutrition": {
+      "need": 445000,
+      "target": 356000,
+      "reached": 142400,
+      "requirements_usd": 15000000,
+      "title": "Emergency Nutrition Support for Earthquake-Affected Populations"
+    },
+    "Protection": {
+      "need": 600000,
+      "target": 480000,
+      "reached": 192000,
+      "requirements_usd": 12000000,
+      "title": "Protection Services for Earthquake-Displaced Communities"
+    },
+    "WASH": {
+      "need": 534000,
+      "target": 427200,
+      "reached": 170880,
+      "requirements_usd": 10000000,
+      "title": "Water and Sanitation Support Post-Earthquake"
+    },
+    "Shelter": {
+      "need": 480000,
+      "target": 384000,
+      "reached": 153600,
+      "requirements_usd": 20000000,
+      "title": "Emergency Shelter for Earthquake-Displaced in Kunar and Nangarhar"
+    },
+    "Health": {
+      "need": 623000,
+      "target": 498400,
+      "reached": 199360,
+      "requirements_usd": 18000000,
+      "title": "Primary Healthcare for Earthquake-Affected Communities"
+    }
+  },
+  "notes": "Needs scaled to ~890,000 affected (50% of Kunar/Nangarhar populations in need, per HNRP 2025). Targets at 80% of need, reached at 40% of target (based on early response reports, e.g., 1,000 tents delivered). Funding estimated from HNRP averages."
+}

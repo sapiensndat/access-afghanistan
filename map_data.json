@@ -1,0 +1,36 @@
+{
+  "map_data": {
+    "Herat_IDP_Nutrition": {
+      "center": [34.3419, 62.2040],
+      "zoom": 9,
+      "markers": [
+        { "lat": 34.35, "lng": 62.20, "radius": 15000, "severity": "High", "popup": "Herat Main Camp: 15,000 in need of nutrition support" },
+        { "lat": 34.30, "lng": 62.15, "radius": 8000, "severity": "Moderate", "popup": "Herat Outskirts: 8,000 in need of nutrition support" }
+      ]
+    },
+    "Badghis_HostCommunity_Protection": {
+      "center": [35.0000, 63.1250],
+      "zoom": 9,
+      "markers": [
+        { "lat": 35.01, "lng": 63.13, "radius": 5000, "severity": "High", "popup": "Qala-i-Naw: 5,000 at risk for protection needs" },
+        { "lat": 34.98, "lng": 63.10, "radius": 3000, "severity": "Moderate", "popup": "Rural Badghis: 3,000 at risk for protection needs" }
+      ]
+    },
+    "Farah_Refugee_Shelter": {
+      "center": [32.3745, 62.1163],
+      "zoom": 10,
+      "markers": [
+        { "lat": 32.38, "lng": 62.12, "radius": 12500, "severity": "High", "popup": "Farah Settlement: 12,500 need shelter support" }
+      ]
+    },
+    "Herat_IDP_Health": {
+      "center": [34.3419, 62.2040],
+      "zoom": 9,
+      "markers": [
+        { "lat": 34.36, "lng": 62.21, "radius": 25000, "severity": "High", "popup": "Herat North Camp: 25,000 need health services" },
+        { "lat": 34.32, "lng": 62.19, "radius": 15000, "severity": "Moderate", "popup": "Herat East Camp: 15,000 need health services" }
+      ]
+    }
+  },
+  "notes": "Coordinates from epicenter_impact.geojson and intensity_zones.geojson. Regions mapped: RegionA=Herat, RegionB=Badghis, RegionC=Farah. Radii scaled to population in need (sqrt(pop)*100). Severity based on intensity zones."
+}

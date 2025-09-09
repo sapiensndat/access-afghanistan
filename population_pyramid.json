@@ -1,0 +1,11 @@
+{"pyramid_data": [
+  {"age": "80+", "male": 4450, "female": 4895, "male_dis": 2225, "female_dis": 2448},
+  {"age": "70-79", "male": 13350, "female": 14685, "male_dis": 5340, "female_dis": 5874},
+  {"age": "60-69", "male": 26700, "female": 24030, "male_dis": 8010, "female_dis": 8811},
+  {"age": "50-59", "male": 44500, "female": 40050, "male_dis": 8900, "female_dis": 9790},
+  {"age": "40-49", "male": 71200, "female": 66750, "male_dis": 10680, "female_dis": 11745},
+  {"age": "30-39", "male": 97900, "female": 93450, "male_dis": 11748, "female_dis": 12923},
+  {"age": "20-29", "male": 124600, "female": 120150, "male_dis": 12460, "female_dis": 13717},
+  {"age": "10-19", "male": 151300, "female": 146850, "male_dis": 12104, "female_dis": 13317},
+  {"age": "0-9", "male": 178000, "female": 173550, "male_dis": 8900, "female_dis": 9790}
+], "notes": "Population scaled to ~890,000 affected (Kunar: 500,000; Nangarhar: 350,000; Other: 40,000). Age distribution: 43% under 15, 53.5% 15-64, 3.5% 65+ (UN/World Bank 2025). Disability: 13% average, increasing with age (5% young, 50% 80+), female bias in older groups."}

@@ -1,0 +1,274 @@
+[
+  {
+    "province": "Kunar",
+    "age_group": "00_04",
+    "male_PIN": 23208,
+    "female_PIN": 22112,
+    "male_disability": 2320,
+    "female_disability": 2211
+  },
+  {
+    "province": "Kunar",
+    "age_group": "05_09",
+    "male_PIN": 20580,
+    "female_PIN": 19037,
+    "male_disability": 2058,
+    "female_disability": 1903
+  },
+  {
+    "province": "Kunar",
+    "age_group": "10_14",
+    "male_PIN": 17871,
+    "female_PIN": 16074,
+    "male_disability": 1787,
+    "female_disability": 1607
+  },
+  {
+    "province": "Kunar",
+    "age_group": "15_19",
+    "male_PIN": 14763,
+    "female_PIN": 13669,
+    "male_disability": 1476,
+    "female_disability": 1366
+  },
+  {
+    "province": "Kunar",
+    "age_group": "20_24",
+    "male_PIN": 10945,
+    "female_PIN": 11632,
+    "male_disability": 1094,
+    "female_disability": 1163
+  },
+  {
+    "province": "Kunar",
+    "age_group": "25_29",
+    "male_PIN": 8620,
+    "female_PIN": 9382,
+    "male_disability": 862,
+    "female_disability": 938
+  },
+  {
+    "province": "Kunar",
+    "age_group": "30_34",
+    "male_PIN": 6688,
+    "female_PIN": 6566,
+    "male_disability": 668,
+    "female_disability": 656
+  },
+  {
+    "province": "Kunar",
+    "age_group": "35_39",
+    "male_PIN": 5465,
+    "female_PIN": 5315,
+    "male_disability": 546,
+    "female_disability": 531
+  },
+  {
+    "province": "Kunar",
+    "age_group": "40_44",
+    "male_PIN": 4649,
+    "female_PIN": 4876,
+    "male_disability": 464,
+    "female_disability": 487
+  },
+  {
+    "province": "Kunar",
+    "age_group": "45_49",
+    "male_PIN": 3869,
+    "female_PIN": 4067,
+    "male_disability": 386,
+    "female_disability": 406
+  },
+  {
+    "province": "Kunar",
+    "age_group": "50_54",
+    "male_PIN": 3085,
+    "female_PIN": 3126,
+    "male_disability": 308,
+    "female_disability": 312
+  },
+  {
+    "province": "Kunar",
+    "age_group": "55_59",
+    "male_PIN": 2576,
+    "female_PIN": 2430,
+    "male_disability": 257,
+    "female_disability": 243
+  },
+  {
+    "province": "Kunar",
+    "age_group": "60_64",
+    "male_PIN": 2279,
+    "female_PIN": 1804,
+    "male_disability": 227,
+    "female_disability": 180
+  },
+  {
+    "province": "Kunar",
+    "age_group": "65_69",
+    "male_PIN": 1762,
+    "female_PIN": 1270,
+    "male_disability": 176,
+    "female_disability": 127
+  },
+  {
+    "province": "Kunar",
+    "age_group": "70_74",
+    "male_PIN": 1189,
+    "female_PIN": 780,
+    "male_disability": 118,
+    "female_disability": 78
+  },
+  {
+    "province": "Kunar",
+    "age_group": "75_79",
+    "male_PIN": 560,
+    "female_PIN": 333,
+    "male_disability": 56,
+    "female_disability": 33
+  },
+  {
+    "province": "Kunar",
+    "age_group": "80plus",
+    "male_PIN": 645,
+    "female_PIN": 395,
+    "male_disability": 64,
+    "female_disability": 39
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "00_04",
+    "male_PIN": 79014,
+    "female_PIN": 75664,
+    "male_disability": 7901,
+    "female_disability": 7566
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "05_09",
+    "male_PIN": 70065,
+    "female_PIN": 65143,
+    "male_disability": 7006,
+    "female_disability": 6514
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "10_14",
+    "male_PIN": 60844,
+    "female_PIN": 55004,
+    "male_disability": 6084,
+    "female_disability": 5500
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "15_19",
+    "male_PIN": 50264,
+    "female_PIN": 46773,
+    "male_disability": 5026,
+    "female_disability": 4677
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "20_24",
+    "male_PIN": 37263,
+    "female_PIN": 39801,
+    "male_disability": 3726,
+    "female_disability": 3980
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "25_29",
+    "male_PIN": 29349,
+    "female_PIN": 32104,
+    "male_disability": 2934,
+    "female_disability": 3210
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "30_34",
+    "male_PIN": 22772,
+    "female_PIN": 22468,
+    "male_disability": 2277,
+    "female_disability": 2246
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "35_39",
+    "male_PIN": 18606,
+    "female_PIN": 18188,
+    "male_disability": 1860,
+    "female_disability": 1818
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "40_44",
+    "male_PIN": 15827,
+    "female_PIN": 16685,
+    "male_disability": 1582,
+    "female_disability": 1668
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "45_49",
+    "male_PIN": 13175,
+    "female_PIN": 13916,
+    "male_disability": 1317,
+    "female_disability": 1391
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "50_54",
+    "male_PIN": 10502,
+    "female_PIN": 10698,
+    "male_disability": 1050,
+    "female_disability": 1069
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "55_59",
+    "male_PIN": 8773,
+    "female_PIN": 8317,
+    "male_disability": 877,
+    "female_disability": 831
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "60_64",
+    "male_PIN": 7762,
+    "female_PIN": 6173,
+    "male_disability": 776,
+    "female_disability": 617
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "65_69",
+    "male_PIN": 6001,
+    "female_PIN": 4347,
+    "male_disability": 600,
+    "female_disability": 434
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "70_74",
+    "male_PIN": 4049,
+    "female_PIN": 2670,
+    "male_disability": 404,
+    "female_disability": 267
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "75_79",
+    "male_PIN": 1906,
+    "female_PIN": 1142,
+    "male_disability": 190,
+    "female_disability": 114
+  },
+  {
+    "province": "Nangarhar",
+    "age_group": "80plus",
+    "male_PIN": 2197,
+    "female_PIN": 1353,
+    "male_disability": 219,
+    "female_disability": 135
+  }
+]
