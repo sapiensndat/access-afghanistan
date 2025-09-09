@@ -1,0 +1,9 @@
+[build]
+  command = "pip install -r requirements.txt && python3 access.py"
+  publish = "layers"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/.netlify/functions/access"
+  to = "/.netlify/functions/access"
+  status = 200
