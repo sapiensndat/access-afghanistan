@@ -24,3 +24,6 @@ cache/
 *.geojson
 cache/
 layers-old/
+
+# Local Netlify folder
+.netlify

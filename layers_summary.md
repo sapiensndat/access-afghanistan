@@ -635,3 +635,19 @@ Band 1 Block=90x22 Type=Float32, ColorInterp=Gray
 ]
 - Dashboard usage: Use Leaflet/Mapbox to display features, style by properties, attach popups with key properties
 
+export async function handler(event, context) {
+  // Example JSON response for dashboard
+  const data = {
+    message: "Dashboard data loaded",
+    coordinates: [
+      { lat: -2.331341, lng: 28.878772 },
+      { lat: -2.330000, lng: 28.880380 }
+    ]
+  };
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json" }
+  };
+}

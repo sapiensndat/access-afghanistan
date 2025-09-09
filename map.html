@@ -14,7 +14,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js"></script>
 
     <style>
-        /* --- Base Layout & Typography --- */
         :root {
             --ocha-un-blue: #009edb;
             --ocha-dark-blue: #004987;
@@ -60,7 +59,6 @@
 
         .dashboard-container { display: flex; flex-grow: 1; position: relative; }
 
-        /* --- Sidebar --- */
         .sidebar {
             width: 350px;
             background-color: var(--ocha-white);
@@ -88,12 +86,10 @@
         .status-breakdown .status-Medium::before { content: '●'; margin-right: 10px; color: #4da8da; }
         .status-breakdown .status-Low::before { content: '●'; margin-right: 10px; color: #b3e0ff; }
 
-        /* --- Search Bar --- */
         .search-bar { margin-bottom: 20px; }
         .search-bar input { width: 100%; padding: 10px; border: 2px solid var(--ocha-medium-grey); border-radius: 5px; font-size: 1em; font-family: 'Roboto Condensed', sans-serif; }
         .search-bar input:focus { border-color: var(--ocha-un-blue); outline: none; box-shadow: 0 0 5px rgba(0, 158, 219, 0.5); }
 
-        /* --- Map & Futuristic UI --- */
         #map { flex-grow: 1; background-color: var(--ocha-light-grey); }
         .district-hover {
             fill-opacity: 0.8 !important;
@@ -101,7 +97,6 @@
             stroke-width: 2.5px !important;
         }
         
-        /* Glassmorphism Effect for Popups, Legend, Controls */
         .leaflet-popup-content-wrapper, .leaflet-control-layers, .legend {
             background-color: rgba(255, 255, 255, 0.8) !important;
             backdrop-filter: blur(12px);
@@ -119,7 +114,6 @@
         .legend h4 { margin: 0 0 8px; font-size: 1.1em; font-weight: 700; border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding-bottom: 5px; }
         .legend i { width: 18px; height: 18px; float: left; margin-right: 10px; opacity: 0.9; border-radius: 2px; }
 
-        /* --- Shining/Glowing Hazard Marker --- */
         .shining-marker {
             width: 16px;
             height: 16px;
@@ -139,7 +133,6 @@
             }
         }
 
-        /* --- Loading Overlay --- */
         #loader-overlay {
             position: absolute;
             top: 0;
@@ -166,7 +159,6 @@
             100% { transform: rotate(360deg); }
         }
         
-        /* --- Footer Disclaimer --- */
         .footer-disclaimer {
             background-color: var(--ocha-neutral-grey);
             padding: 12px;
@@ -305,8 +297,8 @@
     });
     
     const styleRoads = (feature) => ({
-        color: accessColors[feature.properties.access_level] || '#ffffff',
-        weight: feature.properties.access_level === 'blocked' ? 4 : 2,
+        color: accessColors[feature.properties.access_lev] || '#ffffff',
+        weight: feature.properties.access_lev === 'blocked' ? 4 : 2,
         opacity: 0.8, 
         lineCap: 'round',
         pane: 'roadsPane'
@@ -338,26 +330,38 @@
     };
 
     async function loadJson(url) {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`Failed to load: ${url}`);
-        return response.json();
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Failed to load: ${url}`);
+            return await response.json();
+        } catch (e) {
+            console.warn(`Failed to load ${url}: ${e.message}`);
+            return { type: 'FeatureCollection', features: [] };
+        }
     }
 
     async function initializeDashboard() {
         try {
             loader.style.display = 'flex'; // Show loader
 
-            const [adminData, roadData] = await Promise.all([
-                loadJson('geoBoundaries-AFG-ADM2_risk.geojson'),
-                loadJson('access_map_yesterday.geojson')
-            ]);
+            // Fetch data from Netlify function
+            const response = await fetch("/.netlify/functions/access");
+            if (!response.ok) {
+                console.error("Fetch error:", response.status, response.statusText);
+                const text = await response.text();
+                console.error("Response body:", text);
+                throw new Error("Failed to fetch JSON");
+            }
+            const data = await response.json();
+            const adminData = data.adminData || { type: "FeatureCollection", features: [] };
+            const roadData = data.roadData || { type: "FeatureCollection", features: [] };
             
-            // --- Process Events by new Categories ---
+            // Process Events by new Categories
             let allEventFeatures = [];
             const eventCounts = { 'Conflict Events': 0, 'Natural Disasters': 0 };
 
             for (const [eventType, files] of Object.entries(eventSources)) {
-                const promises = files.map(file => loadJson(file).catch(e => ({ features: [] })));
+                const promises = files.map(file => loadJson(file));
                 const datasets = await Promise.all(promises);
                 
                 datasets.forEach(dataset => {
@@ -369,12 +373,12 @@
                 });
             }
 
-            // --- Create Map Layers ---
+            // Create Map Layers
             let hoveredLayer = null;
             const adminLayer = L.geoJSON(adminData, {
                 style: styleAdmin,
                 onEachFeature: (feature, layer) => {
-                    layer.bindPopup(`<strong>District:</strong> ${feature.properties.shapeName}<br><strong>Risk Level:</strong> ${feature.properties.risk_level}`);
+                    layer.bindPopup(`<strong>District:</strong> ${feature.properties.shapeName || 'Unknown'}<br><strong>Risk Level:</strong> ${feature.properties.risk_level || 'None'}`);
                     layer.on({
                         mouseover: (e) => {
                             hoveredLayer = e.target;
@@ -392,14 +396,14 @@
 
             const roadLayer = L.geoJSON(roadData, {
                 style: styleRoads,
-                onEachFeature: (f, l) => l.bindPopup(`<strong>Access:</strong> ${f.properties.access_level}<br><strong>Obstruction:</strong> ${f.properties.obstruction}`)
+                onEachFeature: (f, l) => l.bindPopup(`<strong>Access:</strong> ${f.properties.access_lev || 'Unknown'}<br><strong>Obstruction:</strong> ${f.properties.obstruct || 'None'}`)
             });
             
             const eventLayer = L.geoJSON({ type: 'FeatureCollection', features: allEventFeatures }, {
                 pointToLayer: createEventMarker,
                 onEachFeature: (f, l) => {
                     const props = f.properties;
-                    l.bindPopup(`<strong>${props.eventType}</strong><br>${props.title || 'Details unavailable'}<br>Source: ${props.source_feed}`);
+                    l.bindPopup(`<strong>${props.eventType}</strong><br>${props.title || 'Details unavailable'}<br>Source: ${props.source_feed || 'Unknown'}`);
                 }
             });
 
@@ -428,7 +432,12 @@
 
         } catch (error) {
             console.error("Dashboard Initialization Failed:", error);
-            loader.innerHTML = "Failed to load data. Please check connection.";
+            loader.innerHTML = "Failed to load data. Using fallback.";
+            const fallbackAdmin = { type: "FeatureCollection", features: [] };
+            const fallbackRoad = { type: "FeatureCollection", features: [] };
+            updateSidebar(fallbackAdmin, fallbackRoad, 0, { 'Conflict Events': 0, 'Natural Disasters': 0 });
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 500);
         }
     }
 
@@ -436,7 +445,7 @@
     function updateSidebar(adminData, roadData, totalEvents, eventCounts) {
         // District Risk Metrics
         const riskCounts = { High: 0, Medium: 0, Low: 0, None: 0 };
-        adminData.features.forEach(f => riskCounts[f.properties.risk_level]++);
+        adminData.features.forEach(f => riskCounts[f.properties.risk_level || 'None']++);
         
         animateValue(document.getElementById('total-districts'), 0, adminData.features.length, 1500);
         animateValue(document.getElementById('risk-high'), 0, riskCounts.High, 1500);
@@ -446,7 +455,7 @@
 
         // Road Access Chart
         const accessCounts = { open: 0, partial: 0, blocked: 0 };
-        roadData.features.forEach(f => accessCounts[f.properties.access_level]++);
+        roadData.features.forEach(f => accessCounts[f.properties.access_lev || 'open']++);
         new Chart(document.getElementById('accessChart').getContext('2d'), {
             type: 'doughnut',
             data: {
@@ -501,13 +510,13 @@
         searchInput.addEventListener('input', function(e) {
             const query = e.target.value.toLowerCase();
             if (query === "") return;
-            const matchedFeature = adminData.features.find(f => f.properties.shapeName.toLowerCase().includes(query));
+            const matchedFeature = adminData.features.find(f => f.properties.shapeName?.toLowerCase().includes(query));
             if (matchedFeature) {
                 const bounds = L.geoJSON(matchedFeature).getBounds();
                 map.fitBounds(bounds);
                 L.popup()
                     .setLatLng(bounds.getCenter())
-                    .setContent(`<strong>District:</strong> ${matchedFeature.properties.shapeName}<br><strong>Risk Level:</strong> ${matchedFeature.properties.risk_level}`)
+                    .setContent(`<strong>District:</strong> ${matchedFeature.properties.shapeName || 'Unknown'}<br><strong>Risk Level:</strong> ${matchedFeature.properties.risk_level || 'None'}`)
                     .openOn(map);
             }
         });
