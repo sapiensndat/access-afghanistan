@@ -141,6 +141,9 @@ for idx, sub_poly in enumerate(split_aoi_for_osm(minx, miny, maxx, maxy, max_siz
         print(f"    ⚠️ Slice {idx+1} OSM fetch failed:", e)
 roads_gdf = pd.concat(roads_gdf_list, ignore_index=True) if roads_gdf_list else gpd.GeoDataFrame(columns=['geometry'], geometry='geometry', crs='EPSG:4326')
 
+# FIX: Initialize the 'mask_pct' column to prevent a KeyError.
+roads_gdf['mask_pct'] = 0.0
+
 # ---------------- LOAD EVENTS ----------------
 event_gdfs = []
 for fname in ("ACLED.geojson","GDACS.geojson","USGS.geojson"):
